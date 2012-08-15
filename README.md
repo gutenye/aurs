@@ -1,4 +1,4 @@
-aur, my packages in Archlinux AUR.
+aur, My packages in Archlinux AUR.
 ========================================
 
 The [Arch User Repository (AUR)](https://aur.archlinux.org/) is a community-driven repository for Arch users.
