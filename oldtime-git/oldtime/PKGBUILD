@@ -1,0 +1,45 @@
+# Contributor: Guten <ywzhaifei@gmail.com>
+
+pkgname=NAME-git
+pkgver=HEAD # auto add by svn
+pkgrel=1
+pkgdesc=DESCRIPTION
+arch=("i686" "x86_64")
+url=URL # must have
+license=("unkonwn")
+groups=()
+depends=()
+makedepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=("etc/foo")
+options=()
+changelog=
+source=("a" "b")
+
+# /             $pkg     
+# APP/          $startdir
+#	  PKGBUILD    
+#	  src/        $srcdir   # created by makepkg
+#	  pkg/        $pkgdir   # created by makepkg
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  mkdir $pkgdir/etc
+  cp a $pkgdir/etc
+
+  #make DESTDIR="$pkgdir/" install
+}
+
+# vim:set ts=2 sw=2 et:
+md5sum=() # makepkg -g >> PKGBUILD

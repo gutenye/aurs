@@ -1,0 +1,2 @@
+# Arguments for foo
+FOO_ARG="-d $HOME"

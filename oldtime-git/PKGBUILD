@@ -1,0 +1,47 @@
+# Contributor: Guten <ywzhaifei@gmail.com>
+
+pkgname=oldtime
+pkgver=VERSION
+pkgrel=1
+pkgdesc="a highly customizable and configurable backup & restore system"
+arch=("i686" "x86_64")
+url="https://github.com/GutenYe/oldtime"
+license=("MIT-LICENSE")
+groups=()
+depends=("rsync" "ruby")
+makedepends=()
+optdepends=()
+provides=()
+conflicts=()
+replaces=()
+backup=("/oldtime/oldtimerc")
+options=()
+install=
+changelog=
+source=()
+md5sums=()
+
+build() {
+ build() {
+   cd $srcdir
+   # _gemdir is defined inside build() because if ruby[gems] is not installed on the system
+   #  makepkg will barf when sourcing the PKGBUILD
+   local _gemdir="$(ruby -rubygems -e'puts Gem.default_dir')"
+ 
+   gem install --ignore-dependencies --verbose -i "$pkgdir$_gemdir" -n "$pkgdir"/usr/bin GEMNAME-$pkgver.gem
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  mkdir $pkgdir/oldtime/oldtime
+  touch $pkgdir/oldtime/oldtimerc
+  chmod 777 -R $pkgdir/oldtime
+
+  cp a $pkgdir/etc
+
+  #make DESTDIR="$pkgdir/" install
+}
+
+
+# vim:set ts=2 sw=2 et:
