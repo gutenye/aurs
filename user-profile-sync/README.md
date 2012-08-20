@@ -1,10 +1,11 @@
 user-profile-sync,  sync browser profiles to tmpfs.
 ==================================================
 
+|                |                                                     |
+|----------------|-----------------------------------------------------|
 | Homepage:      |  https://github.com/GutenYe/user-profile-sync       |
-|----------------|------------------------------------------------------       |
-| Author:	       | Guten                                                 |
-| License:       | MIT-LICENSE                                                |
+| Author:	       | Guten                                               |
+| License:       | MIT-LICENSE                                         |
 | Issue Tracker: | https://github.com/GutenYe/user-profile-sync/issues |
 
 Since the profile(s), browser cache, etc. are relocated into tmpfs, the corresponding onslaught of I/O associated with using the browser is also redirected from the physical disc to RAM, thus reducing wear to the physical disc and also greatly improving browser speed and responsiveness. The access time of RAM is on the order of nanoseconds while the access time of physical discs is on the order of milliseconds. This is a difference of six orders of magnitude or 1,000,000 times faster. 
@@ -62,7 +63,7 @@ Copyright
 
 (the MIT License)
 
-Copyright (c) 2011 Guten
+Copyright (c) 2011-2012 Guten
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
