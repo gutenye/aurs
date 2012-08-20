@@ -1,56 +1,49 @@
-# Contributor: Guten <ywzhaifei@gmail.com>
+# Maintainer: Guten Ye
 
-pkgname=thebear-git
-pkgver=20120129
+pkgname="thebear-git"
+pkgver=20120820
 pkgrel=1
-pkgdesc="The Bear - a giant downloader - web front end to aria2"
+pkgdesc="a web front end to aria2."
 arch=("i686" "x86_64")
-url="http://sourceforge.net/p/thebear/home/Home/"
+url="http://sourceforge.net/p/thebear/home/Home"
 license=("unknown")
-groups=()
-depends=()
-makedepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=()
-md5sums=()
+depends=("git")
+provides=("thebear")
+source=("apache.example.conf")
 
 _gitroot="git://git.code.sf.net/p/thebear/code"
 _gitname="thebear"
 
 build() {
-  cd ${srcdir}
+  cd "$srcdir"
   msg "Connecting to GIT server...."
 
-  if [ -d ${_gitname}/.git ] ; then
-    cd ${_gitname}
-
-    # Change remote url to anongit
-    if [ -z $( git branch -v | grep anongit ) ] ; then
-        git remote set-url origin ${_gitroot}
-    fi
-    
-    git pull origin
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
     msg "The local files are updated."
   else
-    git clone ${_gitroot} ${_gitname}
+    git clone "$_gitroot" "$_gitname"
   fi
+
   msg "GIT checkout done or server timeout"
+  msg "Starting build..."
+
+  rm -rf "$srcdir/$_gitname-build"
+  git clone "$srcdir/$_gitname" "$srcdir/$_gitname-build"
+  cd "$srcdir/$_gitname-build"
+
+  chmod 777 assets protected
 }
 
 package() {
-  mkdir -p $pkgdir/srv/http/thebear/
-  cp -ar ${srcdir}/${_gitname}/* $pkgdir/srv/http/thebear/
+  cd "$srcdir/$_gitname-build"
 
-  cd $pkgdir/srv/http/thebear
-  chmod 777 -R assets protected
+  mkdir -p "$pkgdir/usr/share/webapps/thebear"
+  mkdir -p "$pkgdir/etc/webapps/thebear"
+
+  cp -r * "$pkgdir/usr/share/webapps/thebear"
+  cp ../apache.example.conf "$pkgdir/etc/webapps/thebear"
 }
 
-
 # vim:set ts=2 sw=2 et:
+md5sums=('f5995bc1348f4cec255ab67dea91d4f2')

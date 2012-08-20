@@ -1,34 +1,22 @@
-# Contributor: Guten <ywzhaifei@gmail.com>
+# Maintainer: Guten Ye
 
-pkgname=user-mpd-daemon
-pkgver=0.3
-pkgrel=1
-pkgdesc="an mpd user daemon. READ https://github.com/GutenYe/user-daemon-system FIRST"
+pkgname="user-mpd-daemon"
+pkgver=0.1
+pkgrel=3
+pkgdesc="an mpd user daemon. README at https://github.com/GutenYe/ref/master/user-mpd-system"
 arch=("i686" "x86_64")
-url="https://github.com/GutenYe"
-license=("MIT-LICENSE")
-groups=()
-depends=("user-daemon-system-git")
-makedepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-changelog=
+url="http://mpd.wikia.com/wiki/Music_Player_Daemon_Wiki"
+license=("MIT")
+depends=("user-daemon-system-git" "mpd")
 source=("rc.mpd")
 
 package() {
-  p_root=$pkgdir/home/$USER
-  cd $srcdir
+  cd "$srcdir"
 
-  mkdir -p $p_root/etc/rc.d
-  cp rc.mpd $p_root/etc/rc.d/mpd
+  install -Dm755 rc.mpd "$pkgdir/home/$USER/etc/rc.d/mpd"
 
-  chown $USER:$USER -R $pkgdir
+  chown $USER:$USER -R "$pkgdir/home/$USER"
 }
-
 
 # vim:set ts=2 sw=2 et:
 md5sums=('48063e0ab826a8aea7a4e73207e972b5')

@@ -1,6 +1,7 @@
-# Contributor: Guten <ywzhaifei@gmail.com> 
+# Maintainer: xx
+# Contributor: Guten Ye
 
-pkgname=goagent-git
+pkgname="goagent-git"
 pkgver=20120413  # git auto added
 pkgrel=1
 pkgdesc="a gae proxy forked from gappproxy/wallproxy"

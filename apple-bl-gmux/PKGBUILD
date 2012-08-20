@@ -1,40 +1,28 @@
-# Contributor: Guten <ywzhaifei@gmail.com>
+# Maintainer: Guten Ye
 
-pkgname=apple-bl-gmux
+pkgname="apple-bl-gmux"
 pkgver=0.4
-pkgrel=1
-pkgdesc="apple_bl kernel module with gmux backlight suppor"
+pkgrel=4
+pkgdesc="a kernel module with gmux backlight suppor"
 arch=("i686" "x86_64")
 url="https://wiki.ubuntu.com/Kernel/AppleGmuxBacklight"
 license=("unkonwn")
-groups=()
 depends=("linux")
 makedepends=("linux-api-headers" "linux-headers")
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-changelog=
 install="install"
-source=("https://launchpad.net/~sforshee/+archive/apple-bl-gmux/+files/apple-bl-gmux-dkms_0.4.tar.gz")
+source=("https://launchpad.net/~sforshee/+archive/apple-bl-gmux/+files/${pkgname}-dkms_${pkgver}.tar.gz")
 
 build(){
-	cd $srcdir/src
+	cd "$srcdir/src"
 
 	make -C /lib/modules/`uname -r`/build M=$PWD
+	gzip -9 -f apple_bl.ko
 }
 
 package(){
-	p_dest="$pkgdir/lib/modules/$(uname -r)/updates/drivers/video/backlight"
-	cd $srcdir/src
+	cd "$srcdir/src"
 
-	install -d $p_dest
-	install apple_bl.ko $p_dest
-
-	cd $p_dest
-	gzip -9 apple_bl.ko
+  install -Dm644 apple_bl.ko.gz "$pkgdir/lib/modules/$(uname -r)/updates/drivers/video/backlight/apple_bl.ko.gz"
 }
 
 # vim:set ts=2 sw=2 et:

@@ -1,25 +1,13 @@
-# Contributor: Guten <ywzhaifei@gmail.com>
+# Maintainer: xx
+# Contributor: Guten Ye
 
-pkgname=ruby-build-git
+pkgname="ruby-build-git"
 pkgver=20120812
 pkgrel=1
 pkgdesc="Compile and install Ruby"
 arch=("i686" "x86_64")
 url="https://github.com/sstephenson/ruby-build"
 license=("the MIT Licence")
-groups=()
-depends=()
-makedepends=()
-optdepends=()
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
-changelog=
-source=()
-md5sums=()
 
 _gitroot="git://github.com/sstephenson/ruby-build.git"
 _gitname="ruby-build"
