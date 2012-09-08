@@ -1,7 +1,7 @@
 # Maintainer: Guten Ye
 
 pkgname="rutorrent-saber-git"
-pkgver=20120423
+pkgver=20120908
 pkgrel=1
 pkgdesc="a rutorrent plugin to auto download files from seedbox."
 arch=("i686" "x86_64")
@@ -36,7 +36,7 @@ build() {
 package() {
   cd "$srcdir/$_gitname-build"
 
-  mkdir -p "$pkgdir/usr/share/webapps/rutorrent/plugins"
+  mkdir -p "$pkgdir/usr/share/webapps/rutorrent/plugins/saber"
   cp -r rutorrent/* "$pkgdir/usr/share/webapps/rutorrent/plugins/saber"
 }
 
