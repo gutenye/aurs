@@ -1,9 +1,9 @@
 # Maintainer: Guten Ye
 
-pkgname="saber-server-daemon"
+pkgname="user-saber-server-daemon"
 pkgver=0.1
-pkgrel=3
-pkgdesc="a saber server daemon"
+pkgrel=1
+pkgdesc="a saber server user daemon"
 arch=("i686" "x86_64")
 url="https://github.com/GutenYe/saber"
 license=("MIT")
@@ -12,8 +12,9 @@ source=("rc.saber-server")
 package() {
   cd "$srcdir"
 
-  install -Dm755 rc.saber-server "$pkgdir/etc/rc.d/saber-server"
+  install -Dm755 rc.saber-server "$pkgdir/home/$USER/etc/rc.d/saber-server"
+  chown $USER:$USER -R "$pkgdir/home/$USER"
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('6a91ee78323d2562096d552d963e7b8e')
+md5sums=('1b2cf1d6325f4f903ecc39e11d43a1ad')

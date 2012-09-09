@@ -1,8 +1,8 @@
 # Maintainer: Guten Ye
 
 pkgname="saber-server-daemon"
-pkgver=0.2
-pkgrel=1
+pkgver=0.1
+pkgrel=2
 pkgdesc="a saber server daemon"
 arch=("i686" "x86_64")
 url="https://github.com/GutenYe/saber"
@@ -18,4 +18,5 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('6a91ee78323d2562096d552d963e7b8e')
+md5sums=('e97283a800518218033a4705e27c9381'
+         '5578e758a867849b2bb57dda2b9da49b')

@@ -4,6 +4,7 @@
 . $HOME/etc/rc.d/functions
 
 p_pid="$HOME/var/run/saber-server.pid"
+p_log="$HOME/var/log/saber-server.log"
 p_daemon_log="$HOME/var/log/saber-server.daemon.log"
 
 [[ -f $p_pid ]] && PID=$(cat $p_pid)
@@ -14,7 +15,7 @@ case "$1" in
     stat_busy "Starting saber server daemon"
 
     if [ -z "$PID" ]; then
-			/usr/bin/saber server &>$p_daemon_log &
+			saber server --log $p_log &>$p_daemon_log &
       echo $! > $p_pid
     fi
 
