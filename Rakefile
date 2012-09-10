@@ -19,7 +19,7 @@ desc "install it to system (alias i)"
 task :install do
   Rake::Task["generate"].invoke
 
-  run "makepkg -i"
+  run "makepkg -si"
 
   Rake::Task["clean"].invoke
 end
