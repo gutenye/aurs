@@ -1,7 +1,7 @@
 # Maintainer: Guten Ye
 
 pkgname="rutorrent-saber-git"
-pkgver=20120908
+pkgver=20120911
 pkgrel=1
 pkgdesc="a rutorrent plugin to auto download files from seedbox."
 arch=("i686" "x86_64")
@@ -41,3 +41,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
+md5sums=()
