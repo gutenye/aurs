@@ -2,7 +2,7 @@
 
 pkgname="user-aria2-daemon"
 pkgver=0.1
-pkgrel=4
+pkgrel=6
 pkgdesc="an aria2 user daemon. READ https://github.com/GutenYe/user-daemon-system FIRST"
 arch=("i686" "x86_64")
 url="http://aria2.sourceforge.net"

@@ -1,14 +1,15 @@
 # Maintainer: Guten Ye
 
-pkgname="genutils-git"
-pkgver=20120820
+pkgname="gutenutils-git"
+pkgver=20120911
 pkgrel=1
 pkgdesc="my utils in Linux"
 arch=("i686" "x86_64")
 url="https://github.com/GutenYe/gutenutils"
 license=("MIT")
-depends=("git")
-provides=("genutils")
+makedepends=("git")
+provides=("gutenutils")
+conficts=("gutenutils")
 
 _gitroot="git://github.com/GutenYe/gutenutils.git"
 _gitname="gutenutils"
@@ -38,3 +39,4 @@ package() {
   mkdir -p "$pkgdir/usr/bin"
   cp -r bin/* "$pkgdir/usr/bin"
 }
+md5sums=()

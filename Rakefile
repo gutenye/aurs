@@ -6,6 +6,9 @@ desc "release it to AUR site (alias r)"
 task :release do
   Rake::Task["generate"].invoke
 
+  run "makepkg -sif"
+  exit if $? != 0
+
   run "makepkg -Sf"
   puts "\nUploading..."
   run "burp *.src.tar.gz"
@@ -19,7 +22,7 @@ desc "install it to system (alias i)"
 task :install do
   Rake::Task["generate"].invoke
 
-  run "makepkg -si"
+  run "makepkg -sif"
 
   Rake::Task["clean"].invoke
 end

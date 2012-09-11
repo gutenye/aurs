@@ -2,11 +2,12 @@
 
 pkgname="user-saber-client-daemon"
 pkgver=0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="a saber client user daemon"
 arch=("i686" "x86_64")
 url="https://github.com/GutenYe/saber"
 license=("MIT")
+depends=("user-daemon-system-git")
 source=("rc.saber-client")
 
 package() {
