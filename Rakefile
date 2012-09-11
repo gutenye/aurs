@@ -6,7 +6,7 @@ desc "release it to AUR site (alias r)"
 task :release do
   Rake::Task["generate"].invoke
 
-  run "makepkg -sif"
+  run "makepkg -si"
   exit if $? != 0
 
   run "makepkg -Sf"
