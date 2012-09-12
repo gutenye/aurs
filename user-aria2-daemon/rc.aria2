@@ -17,8 +17,10 @@ case "$1" in
     stat_busy "Starting aria2 daemon"
 
     if [ -z "$PID" ]; then
-      /usr/bin/aria2c --enable-rpc --rpc-allow-origin-all --save-session $p_session --input-file $p_session $ARIA2C_ARG &> $p_log &
+      aria2c --enable-rpc --rpc-allow-origin-all --save-session $p_session --input-file $p_session $ARIA2C_ARG &> $p_log &
       echo $! > $p_pid
+		else
+			echo "${C_OTHER}SKIP${C_CLEAR} aria2 is already running."
     fi
 
     if [ $? -gt 0 ]; then
@@ -34,6 +36,8 @@ case "$1" in
 		if [ ! -z "$PID" ]; then 
       kill $PID &> /dev/null
       rm $p_pid
+		else
+			echo "${C_OTHER}SKIP${C_CLEAR} aria2 is not running."
     fi
 
 		if [ $? -gt 0 ]; then
