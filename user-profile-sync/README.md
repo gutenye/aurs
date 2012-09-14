@@ -55,6 +55,8 @@ Credits
 Resources
 --------
 
+* [Firefox Ramdisk](https://wiki.archlinux.org/index.php/Firefox_Ramdisk) 
+* [Chromium Cache in tmpfs](https://wiki.archlinux.org/index.php/Chromium_Tips_and_Tweaks#Cache_in_tmpfs)
 * [profile-sync-daemon](https://bbs.archlinux.org/viewtopic.php?pid=1026974): sync brower profiles to tmpfs.
 * [user-daemon-system](https://github.com/GutenYe/user-daemon-system): The missing daemon system for user.
 

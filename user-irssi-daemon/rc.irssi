@@ -10,7 +10,7 @@ case "$1" in
 		if screen -ls | grep -q irssi; then
 			echo "${C_OTHER}SKIP${C_CLEAR} irssi is already running."
 		else
-			screen -dmS irssi
+			screen -dmS irssi irssi
 		fi
 
     if [ $? -gt 0 ]; then
@@ -21,7 +21,7 @@ case "$1" in
     fi
     ;;
   stop)
-		stat_busy "Stopping irssidaemon ($USER)"
+		stat_busy "Stopping irssi daemon ($USER)"
 
 		if screen -ls | grep -q irssi; then
 			screen -S irssi -X quit
