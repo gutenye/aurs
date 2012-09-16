@@ -33,8 +33,8 @@
 #    running the following commands in the dir, containing ISO
 #   (make necessary changes if needed):
 #
-#       7z e Windows_8_Pro_EN-US_x64.ISO sources/install.wim
-#       7z e install.wim 1/Windows/Fonts/{*.ttf,cambria.ttc} -ofonts
+#       $ mount -o loop Windows_8_Pro_EN-US_x64.ISO /mnt
+#       $ 7z e /mnt/sources/install.wim 1/Windows/Fonts -ofonts
 #
 #    Fonts will be located in the 'fonts' dir.
 #    
@@ -80,8 +80,15 @@ install="$pkgname.install"
 ###################################################################
 source=('ariblk.ttf'
         'arial.ttf'   'arialbd.ttf'  'ariali.ttf'   'arialbi.ttf'
-        'cour.ttf'    'courbd.ttf'   'couri.ttf'    'courbi.ttf'
+        'calibri.ttf' 'calibrib.ttf' 'calibrii.ttf' 'calibriz.ttf'
+        'calibril.ttf'               'calibrili.ttf'
+        'cambria.ttc' 'cambriab.ttf' 'cambriai.ttf' 'cambriaz.ttf'
+        'Candara.ttf' 'Candarab.ttf' 'Candarai.ttf' 'Candaraz.ttf'
         'comic.ttf'   'comicbd.ttf'  'comici.ttf'   'comicz.ttf'
+        'consola.ttf' 'consolab.ttf' 'consolai.ttf' 'consolaz.ttf'
+        'constan.ttf' 'constanb.ttf' 'constani.ttf' 'constanz.ttf'
+        'corbel.ttf'  'corbelb.ttf'  'corbeli.ttf'  'corbelz.ttf'
+        'cour.ttf'    'courbd.ttf'   'couri.ttf'    'courbi.ttf'
         'Gabriola.ttf'
         'georgia.ttf' 'georgiab.ttf' 'georgiai.ttf' 'georgiaz.ttf'
         'impact.ttf'
@@ -90,20 +97,6 @@ source=('ariblk.ttf'
         'mangal.ttf'  'mangalb.ttf'
         'micross.ttf'
         'pala.ttf'    'palab.ttf'    'palai.ttf'    'palabi.ttf'
-        'symbol.ttf' 
-        'tahoma.ttf'  'tahomabd.ttf'
-        'times.ttf'   'timesbd.ttf'  'timesi.ttf'   'timesbi.ttf'
-        'trebuc.ttf'  'trebucbd.ttf' 'trebucit.ttf' 'trebucbi.ttf'
-        'verdana.ttf' 'verdanab.ttf' 'verdanai.ttf' 'verdanaz.ttf'
-        'webdings.ttf'
-        'wingding.ttf'
-        'calibri.ttf' 'calibrib.ttf' 'calibrii.ttf' 'calibriz.ttf'
-        'calibril.ttf'               'calibrili.ttf'
-        'cambria.ttc' 'cambriab.ttf' 'cambriai.ttf' 'cambriaz.ttf'
-        'Candara.ttf' 'Candarab.ttf' 'Candarai.ttf' 'Candaraz.ttf'
-        'consola.ttf' 'consolab.ttf' 'consolai.ttf' 'consolaz.ttf'
-        'constan.ttf' 'constanb.ttf' 'constani.ttf' 'constanz.ttf'
-        'corbel.ttf'  'corbelb.ttf'  'corbeli.ttf'  'corbelz.ttf'
         'segoeui.ttf' 'segoeuib.ttf' 'segoeuii.ttf' 'segoeuiz.ttf'
         'segoeuil.ttf'               'seguili.ttf'
         'seguisb.ttf'                'seguisbi.ttf'
@@ -111,6 +104,14 @@ source=('ariblk.ttf'
         'segoepr.ttf' 'segoeprb.ttf'
         'segoesc.ttf' 'segoescb.ttf'
         'seguisym.ttf'
+        'symbol.ttf' 
+        'tahoma.ttf'  'tahomabd.ttf'
+        'times.ttf'   'timesbd.ttf'  'timesi.ttf'   'timesbi.ttf'
+        'trebuc.ttf'  'trebucbd.ttf' 'trebucit.ttf' 'trebucbi.ttf'
+        'verdana.ttf' 'verdanab.ttf' 'verdanai.ttf' 'verdanaz.ttf'
+        'webdings.ttf'
+        'wingding.ttf'
+				'msyhbd.ttc' 'msyh.ttc' 'simfang.ttf' 'simhei.ttf' 'simkai.ttf' 'simsun.ttc'
         'license.rtf')
 
 build() {
@@ -129,7 +130,7 @@ package() {
   install -dm755 "$pkgdir/usr/share/fonts/TTF"
 
   # Install fonts and license
-  install -m644 *.ttf "$pkgdir/usr/share/fonts/TTF"
+  install -m644 *.ttf *.ttc "$pkgdir/usr/share/fonts/TTF"
   install -Dm644 license.rtf "$pkgdir/usr/share/licenses/$pkgname/license.rtf"
 }
 
@@ -219,4 +220,10 @@ md5sums=('1f704893145d21747186116f85b2c062'
          '5c452fb7a0f5751f4e94e9d84eb01154'
          'acd33fd0ea8c011932aa4f3ac713663c'
          '437c3323b83093ccb16abbf197bb4e40'
+         '754b8ca1a3bc662247a948adcaa91459'
+         '5e42bcb1a2f001debc82305025461bc5'
+         '2ecbfe1d9bfc191c6f15c0ccc23cbd43'
+         'e54ea8e978c319647285100ebcabb037'
+         'bbfaa12767e15e3f94ea902402527b17'
+         '5505af031d79715c8663fbed0f7ca7fd'
          'c70dcf29d5da576587eee25911f06321')
