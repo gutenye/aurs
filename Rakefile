@@ -58,6 +58,15 @@ end
 
 alias_task :t, :test
 
+desc "build the pkg (alias b)"
+task :build do
+  Rake::Task["generate"].invoke
+
+  run "makepkg -sf"
+end
+
+alias_task :b, :build
+
 def run(cmd, o={})
   o = {verbose: true}.merge(o)
 

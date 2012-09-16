@@ -3,4 +3,6 @@ pkg
 *.tar.*
 *.tgz
 *.gem
-/ttf-ms-win8
+*.ttf
+*.dfont
+*.ttc
