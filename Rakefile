@@ -62,8 +62,8 @@ desc "build the pkg (alias b)"
 task :build do
   Rake::Task["generate"].invoke
 
-  run "tar zcvf ttf-mac-10.8.1-1.src.tar.gz ttf-mac -h"
-  #run "makepkg -sf"
+  #run "tar zcvf ttf-mac-10.8.1-1.src.tar.gz ttf-mac -h"
+  run "makepkg -sf"
 end
 
 alias_task :b, :build
