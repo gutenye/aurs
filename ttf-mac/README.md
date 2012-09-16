@@ -1,3 +1,10 @@
+ttf-mac, a Archlinux package of Mac OS X TrueType fonts
+--------------------------------------------------
+
+|    |                                                |
+|----|------------------------------------------------|
+|AUR | https://aur.archlinux.org/packages.php?ID=62850|
+
 It doesn't include following fonts
 
 	LastResort.ttf
