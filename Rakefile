@@ -1,3 +1,5 @@
+# tar zcvf ttf-mac-10.8.1-1.src.tar.gz ttf-mac -h
+
 def alias_task(new, old)
   task new, Rake::Task[old].arg_names => old
 end
@@ -41,8 +43,12 @@ alias_task :c, :clean
 
 desc "generate md5sum for PKGBUILD (alias g)"
 task :generate do
-  run %~sed -i '/md5sum/,$ d' PKGBUILD~, verbose: false
-  run "makepkg -g >> PKGBUILD"
+  if !@invoked_generate then
+    run %~sed -i '/md5sum/,$ d' PKGBUILD~, verbose: false
+    run "makepkg -g >> PKGBUILD"
+
+    @invoked_generate = true
+  end
 end
 
 alias_task :g, :generate
@@ -62,7 +68,6 @@ desc "build the pkg (alias b)"
 task :build do
   Rake::Task["generate"].invoke
 
-  #run "tar zcvf ttf-mac-10.8.1-1.src.tar.gz ttf-mac -h"
   run "makepkg -sf"
 end
 

@@ -43,7 +43,11 @@ On the installed Mac OS X fonts are located in
 	
 	/System/Library/Fonts
 
-Copy all `*.dfont`, `*.ttf` fonts into source directory, and start to build.
+Copy all `*.dfont`, `*.ttf` fonts into source directory, and start to build.  
+
+Note: Directly cp theses fonts under Linux get zero size file.
 
 	$ makepkg -s 
 	$ pacman -U ttf-mac-*.pkg.tar.xz
+
+Wow, It's too complex, it there a easy way? sure, you can find a download link at [here](http://code.google.com/p/invisible-files/downloads/list)
