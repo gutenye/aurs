@@ -5,7 +5,27 @@ ttf-mac, a Archlinux package of Mac OS X TrueType fonts
 |----|------------------------------------------------|
 |AUR | https://aur.archlinux.org/packages.php?ID=62850|
 
-It doesn't include following fonts
+It contains following fonts
+
+	Apple Braille.ttf
+	Apple Braille Outline 6 Dot.ttf
+	Apple Braille Outline 8 Dot.ttf
+	Apple Braille Pinpoint 6 Dot.ttf
+	Apple Braille Pinpoint 8 Dot.ttf
+	Courier.dfont
+	Geeza Pro.ttf, Geeza Pro Bold.ttf
+	Geneva.dfont
+	Helvetica.dfont
+	HelveticaNeue.dfont
+	Keyboard.ttf
+	Monaco.dfont
+	Symbol.ttf
+	ThonburiBold.ttf
+	Thonburi.ttf
+	Times.dfont
+	ZapfDingbats.ttf
+
+without
 
 	LastResort.ttf
 	Apple Symbols.ttf
