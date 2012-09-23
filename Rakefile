@@ -1,4 +1,4 @@
-# tar zcvf ttf-mac-10.8.1-4.src.tar.gz ttf-mac -h
+# tar zcvf ttf-mac-10.8.1-5.src.tar.gz ttf-mac -h
 # tar zcvf ttf-mac-fonts.tar.gz ttf-mac-fonts -h
 
 def alias_task(new, old)
