@@ -1,0 +1,26 @@
+# Maintainer: Guten Ye
+
+pkgname="user-saber-chd-daemon"
+pkgver=0.1
+pkgrel=1
+pkgdesc="a saber chd user daemon"
+arch=("i686" "x86_64")
+url="https://github.com/GutenYe/saber"
+license=("MIT")
+depends=("user-daemon-system-git")
+source=(
+  "rc.saber-chd"
+  "conf.saber-chd"
+  )
+
+package() {
+  cd "$srcdir"
+
+  install -Dm755 rc.saber-chd "$pkgdir/home/$USER/etc/rc.d/saber-chd"
+  install -Dm644 conf.saber-chd "$pkgdir/home/$USER/etc/conf.d/saber-chd"
+  chown $USER:$USER -R "$pkgdir/home/$USER"
+}
+
+# vim:set ts=2 sw=2 et:
+md5sums=('176ee6e32e93b7a5cdea8b3129a075d6'
+         '6685fd0ea983781040e38cd370244252')

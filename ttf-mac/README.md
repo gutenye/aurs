@@ -17,7 +17,11 @@ It contains following fonts
 	Geneva.dfont
 	Helvetica.dfont
 	HelveticaNeue.dfont
+	HelveticaNeueDeskUI.ttc
 	Keyboard.ttf
+	LucidaGrande.ttc
+	MarkerFelt.ttc
+	Menlo.ttc
 	Monaco.dfont
 	Symbol.ttf
 	ThonburiBold.ttf
@@ -27,10 +31,13 @@ It contains following fonts
 
 without
 
-	LastResort.ttf
 	Apple Symbols.ttf
 	Apple Color Emoji.ttf
 	AppleGothic.ttf
+	AquaKana.ttc
+	LastResort.ttf
+	STHeiti Light.ttc
+	STHeiti Medium.ttc
 
 Install
 -------
@@ -43,7 +50,7 @@ On the installed Mac OS X fonts are located in
 	
 	/System/Library/Fonts
 
-Copy all `*.dfont`, `*.ttf` fonts into source directory, and start to build.  
+Copy all `*.dfont`, `*.ttf`, `*.ttc` fonts into source directory, and start to build.  
 
 Note: Directly cp theses fonts under Linux get zero size file.
 
