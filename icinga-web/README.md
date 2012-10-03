@@ -64,6 +64,9 @@ Finally
 	! Start Icinga      # must after IDOUtils
 	$ systemctl start icinga
 
+	! Start Mysql
+	$ systemctl start mysqld
+
 	! Start Apache Server
 	$ systemctl start httpd
 

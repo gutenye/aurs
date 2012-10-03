@@ -1,7 +1,7 @@
 pkgname=icinga-web
 pkgver=1.7.2
 pkgrel=1
-pkgdesc="Icinga New Web Interface"
+pkgdesc="Icinga New Web Interface. INSTALLATION at https://github.com/GutenYe/aur/tree/master/icinga-web"
 license=('GPL')
 arch=('i686' 'x86_64')
 depends=('icinga' 'php-pear' 'php-xsl' 'php-ldap')
