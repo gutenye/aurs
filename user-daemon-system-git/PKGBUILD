@@ -1,8 +1,8 @@
 # Maintainer: Guten Ye
 
 pkgname="user-daemon-system-git"
-pkgver=20120911  
-pkgrel=3
+pkgver=20120924  
+pkgrel=1
 pkgdesc="A User based Daemon System for ZSH. READ https://github.com/GutenYe/user-daemon-system FIRST." 
 arch=("i686" "x86_64")
 url="https://github.com/GutenYe/user-daemon-system"
@@ -43,7 +43,9 @@ package() {
   mkdir -p $pkgdir/home/$USER/usr/bin
 
   cp -rT etc $pkgdir/home/$USER/etc
-  install -Dm755 bin/user-daemon-system $pkgdir/usr/bin/user-daemon-system
+
+  mkdir -p $pkgdir/usr/sbin
+  install -Dm755 bin/* $pkgdir/usr/sbin
 
   chown $USER:$USER -R $pkgdir/home/$USER
 }

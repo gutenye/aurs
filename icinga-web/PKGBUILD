@@ -1,0 +1,35 @@
+pkgname=icinga-web
+pkgver=1.7.2
+pkgrel=1
+pkgdesc="Icinga New Web Interface"
+license=('GPL')
+arch=('i686' 'x86_64')
+depends=('icinga' 'php-pear' 'php-xsl' 'php-ldap')
+url="http://www.icinga.org"
+source=("http://downloads.sourceforge.net/project/icinga/icinga-web/$pkgver/icinga-web-${pkgver}.tar.gz")
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+
+  ./configure \
+  --with-web-user=http \
+  --with-web-group=http \
+  --with-web-path=/icinga-web \
+  --with-db-socket=/run/mysqld/mysqld.sock \
+  --with-enable-sla \
+  --with-conf-dir=/etc/icinga-web \
+  --with-log-dir=/var/log/icinga \
+  --with-icinga-bin=/usr/share/icinga-web/bin \
+  --with-cache-dir=/usr/share/icinga-web/app/cache \
+  --with-icinga-cfg=/usr/share/icinga-web/etc
+}
+
+package() {
+	cd $srcdir/$pkgname-$pkgver
+
+  make DESTDIR="$pkgdir" install
+
+	cp etc/apache2/icinga-web.conf $pkgdir/etc/icinga-web/apache.conf.example
+}
+
+md5sums=('ea83917b7f9335430de855f68f4318d7')
