@@ -7,10 +7,6 @@ Setup IDOUtils
 	# mv idomod.cfg-sample idomod.cfg
 	# mv ido2db.cfg-sample ido2db.cfg
 
-	! edit /etc/icinga.conf
-
-		broker_module=/usr/share/icinga/lib/idomod.so config_file=/etc/icinga/idomod.cfg
-
 	! Database Setup
 
 	(Mysql)
@@ -39,7 +35,7 @@ Configure apache and php
 
 	# edit /etc/php.ini
 
-		open_basedir = ...:/usr/local/icinga-web:/usr/share/icinga-web:/var/log/icinga
+		open_basedir = ...:/usr/local/icinga-web:/var/cache/icinga-web
 		extension=pdo_mysql.so
 
 Database Setup 
@@ -59,7 +55,7 @@ Database Setup
 Finally
 
 	! Start IDOUtils
-	$ ido2db -c /etc/icinga/ido2db.conf
+	$ ido2db -c /etc/icinga/ido2db.cfg
 
 	! Start Icinga      # must after IDOUtils
 	$ systemctl start icinga

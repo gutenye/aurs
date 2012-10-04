@@ -9,23 +9,25 @@ url="http://www.icinga.org"
 source=("http://downloads.sourceforge.net/project/icinga/icinga-web/$pkgver/icinga-web-${pkgver}.tar.gz")
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
+  cd "$srcdir/$pkgname-$pkgver"
 
-  ./configure \
-  --with-web-user=http \
-  --with-web-group=http \
-  --with-web-path=/icinga-web \
-  --with-db-socket=/run/mysqld/mysqld.sock \
-  --with-enable-sla \
-  --with-conf-dir=/etc/icinga-web \
-  --with-log-dir=/var/log/icinga \
-  --with-icinga-bin=/usr/share/icinga-web/bin \
-  --with-cache-dir=/usr/share/icinga-web/app/cache \
-  --with-icinga-cfg=/usr/share/icinga-web/etc
+	./configure  \
+		--with-web-user=http \
+		--with-web-group=http \
+		--with-web-apache-path=/etc/httpd/conf/extra \
+		--with-db-socket=/run/mysqld/mysqld.sock \
+		--with-conf-dir=/etc/icinga-web \
+		--with-log-dir=/var/log/icinga \
+		--with-cache-dir=/var/cache/icinga-web \
+		--with-icinga-bin=/usr/bin \
+		--with-icinga-cfg=/etc/icinga \
+		--with-icinga-objects-dir=/etc/icinga/objects \
+		--with-api-cmd-file=/var/icinga/var/rw/icinga.cmd \
+		--with-enable-sla
 }
 
 package() {
-	cd $srcdir/$pkgname-$pkgver
+	cd "$srcdir/$pkgname-$pkgver"
 
   make DESTDIR="$pkgdir" install
 
