@@ -26,16 +26,18 @@ build() {
 
   ./configure \
     --prefix="/usr/share/icinga" \
-    --with-icinga-user=${_icinga_user} \
-    --with-icinga-group=${_icinga_user} \
+    --datarootdir="/usr/share/webapps/icinga" \
+		--sbindir="/usr/share/webapps/icinga/cgi-bin" \
     --bindir="/usr/bin" \
     --localstatedir="/var/icinga" \
     --sysconfdir="/etc/icinga" \
+    --with-log-dir="/var/log/icinga" \
+    --with-icinga-user=${_icinga_user} \
+    --with-icinga-group=${_icinga_user} \
     --with-web-user=http \
     --with-web-group=http \
     --with-httpd-conf="/etc/httpd/conf/extra" \
     --with-checkresultdir="/var/icinga/spool/checkresults" \
-    --with-log-dir="/var/log/icinga" \
     --enable-idoutils \
     --enable-embedded-perl \
     --enable-ssl
@@ -58,10 +60,6 @@ package() {
   install -dm755 "$pkgdir/usr/share/icinga/idoutils"
   cp -r module/idoutils/db "$pkgdir/usr/share/icinga/idoutils"
 
-  install -dm755 "$pkgdir/usr/share/webapps" 
-  ln -s "/usr/share/icinga/sbin" "$pkgdir/usr/share/icinga/share/cgi-bin"
-  ln -s "/usr/share/icinga/share" "$pkgdir/usr/share/webapps/icinga"
-
   mkdir -p "$pkgdir/var/icinga/rw"
   chown ${_icinga_user}:${_icinga_group} "$pkgdir/var/icinga/rw"
 
@@ -73,7 +71,7 @@ package() {
   find $pkgdir/etc/icinga -type f -exec chmod 644 "{}" \; > /dev/null
   find $pkgdir/etc/icinga -type d -exec chmod 755 "{}" \; > /dev/null
   chmod -R 755 $pkgdir/usr/bin
-  chmod 755 $pkgdir/usr/share/icinga/sbin/*
+  chmod 755 $pkgdir/usr/share/webapps/icinga/cgi-bin/*
   chmod 755 $pkgdir/usr/share/icinga/lib/idomod.so
   chmod 755 $pkgdir/etc/icinga/daemon-init
   chown -R root:root $pkgdir/etc
