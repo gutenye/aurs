@@ -22,7 +22,7 @@ build() {
 		--with-icinga-bin=/usr/bin \
 		--with-icinga-cfg=/etc/icinga \
 		--with-icinga-objects-dir=/etc/icinga/objects \
-		--with-api-cmd-file=/var/icinga/var/rw/icinga.cmd \
+		--with-api-cmd-file=/var/icinga/rw/icinga.cmd \
 		--with-enable-sla
 }
 
