@@ -9,10 +9,6 @@ depends=('gd' 'freetype2' 'libtool' 'libdbi-drivers' 'openssl')
 optdepends=('nagios-plugins: plugins needed for icinga checks')
 source=("http://downloads.sourceforge.net/project/icinga/icinga/$pkgver/$pkgname-$pkgver.tar.gz" 
         "rc.icinga" "systemd.icinga" "icinga.install")
-md5sums=('069b9a865bab7fd48be1b6da2953f5c7'
-         '3d08782ae1c41d1c9735510e686a0a22'
-         '69bc47b5887e4522cce14b378e981d40'
-         '73f4dfb35e1e809130cb123d10821e1f')
 install='icinga.install'
 
 _icinga_user="icinga"
@@ -78,3 +74,8 @@ package() {
   chown -R root:root $pkgdir/usr/bin
   chown -R root:root $pkgdir/usr/share/icinga
 }
+
+md5sums=('069b9a865bab7fd48be1b6da2953f5c7'
+         '3d08782ae1c41d1c9735510e686a0a22'
+         '69bc47b5887e4522cce14b378e981d40'
+         '73f4dfb35e1e809130cb123d10821e1f')
