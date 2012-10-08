@@ -2,7 +2,7 @@
 
 pkgname=icinga-web
 pkgver=1.7.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Icinga New Web Interface."
 license=('GPL')
 arch=('i686' 'x86_64')
@@ -26,7 +26,7 @@ build() {
 		--with-icinga-bin=/usr/bin \
 		--with-icinga-cfg=/etc/icinga \
 		--with-icinga-objects-dir=/etc/icinga/objects \
-		--with-api-cmd-file=/var/icinga/rw/icinga.cmd \
+		--with-api-cmd-file=/var/spool/icinga/rw/icinga.cmd \
 		--with-enable-sla
 }
 
@@ -44,4 +44,4 @@ package() {
 }
 
 md5sums=('ea83917b7f9335430de855f68f4318d7'
-         '5fe43186c322298bfb4f9384d4166179')
+         'b8f56703a0a6a8b05b9fae070d407ce7')

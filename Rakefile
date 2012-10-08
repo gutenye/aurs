@@ -9,6 +9,7 @@ desc "release it to AUR site (alias r)"
 task :release do
   Rake::Task["generate"].invoke
 
+  # make sure tested
   run "makepkg -si"
   exit if $? != 0
 
@@ -37,7 +38,7 @@ task :clean do
   # src.tar.gz
   # pkg.tar.xz
   # tar.gz, tar.bz ..
-  `rm *.tar.* &>/dev/null` 
+  #`rm *.tar.* &>/dev/null` 
 end
 
 alias_task :c, :clean
