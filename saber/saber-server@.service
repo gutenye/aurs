@@ -1,0 +1,12 @@
+[Unit]
+Description=saber-server Service
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+Environment=VAR=/var/%i
+ExecStart=/usr/bin/saber server --log ${VAR}/saber-server.log -V
+
+[Install]
+WantedBy=multi-user.target

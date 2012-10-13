@@ -1,0 +1,12 @@
+[Unit]
+Description=saber-chd Service
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+Environment=VAR=/var/%i
+ExecStart=/usr/bin/saber chd --log ${VAR}/saber-chd.log -V
+
+[Install]
+WantedBy=multi-user.target
