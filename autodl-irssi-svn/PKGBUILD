@@ -2,7 +2,7 @@
 
 pkgname="autodl-irssi-svn" 
 pkgver=726
-pkgrel=2
+pkgrel=3
 pkgdesc="Plugin for irssi which monitor IRC announce channels and download torrents based on user defined filters. see https://wiki.archlinux.org/index.php/Autodl-irssi for Installation."
 arch=("i686" "x86_64")
 url="http://sourceforge.net/projects/autodl-irssi/"
@@ -10,7 +10,6 @@ license=("unknown")
 depends=("irssi" "perl-archive-zip" "perl-net-ssleay" "perl-html-parser" "perl-xml-libxml" "perl-digest-sha1" "perl-json" "perl-json-xs" "perl-xml-libxslt" "svn")
 optdepends=("rutorrent-autodl-irssi-svn: autodl-irssi plugin for rutorrent.")
 provides=("autodl-irssi")
-
 _svntrunk="https://autodl-irssi.svn.sourceforge.net/svnroot/autodl-irssi/trunk/src"
 _svnmod="autodl-irssi"
 
@@ -30,8 +29,6 @@ build() {
   rm -rf "$srcdir/$_svnmod-build"
   cp -r "$srcdir/$_svnmod" "$srcdir/$_svnmod-build"
   cd "$srcdir/$_svnmod-build"
-
-	rm README.txt
 }
 
 package() {

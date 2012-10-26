@@ -34,11 +34,11 @@ end
 alias_task :i, :install
 
 desc "clean all generated pkgs (alias c)"
+# src.tar.gz
+# pkg.tar.xz
+# tar.gz, tar.bz ..
 task :clean do
-  # src.tar.gz
-  # pkg.tar.xz
-  # tar.gz, tar.bz ..
-  #`rm *.tar.* &>/dev/null` 
+  `rm *.tar.* &>/dev/null` 
 end
 
 alias_task :c, :clean
