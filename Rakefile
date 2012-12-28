@@ -38,7 +38,7 @@ desc "clean all generated pkgs (alias c)"
 # pkg.tar.xz
 # tar.gz, tar.bz ..
 task :clean do
-  `rm *.tar.* &>/dev/null` 
+  #`rm *.tar.* &>/dev/null` 
 end
 
 alias_task :c, :clean
