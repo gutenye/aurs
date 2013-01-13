@@ -1,5 +1,5 @@
 pkgname=icinga
-pkgver=1.8.2
+pkgver=1.8.3
 pkgrel=1
 pkgdesc="An open source host, service and network monitoring program."
 license=('GPL')
@@ -91,7 +91,7 @@ package() {
 
 
 
-md5sums=('30306e28c3d91a2eb29dc7bb65ed169b'
+md5sums=('22460c5c63339975eb3341f9bbb7a281'
          'e57fd8e2b768fbe280b27e50f2f81071'
          '9ff49d279b8a7b3ebf6229b9c47b852b'
          '73f4dfb35e1e809130cb123d10821e1f')
