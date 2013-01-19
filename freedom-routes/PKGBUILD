@@ -2,7 +2,7 @@
 
 pkgname="freedom-routes"
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Internet Freedom - add local routes in vpn for accessing local websites using direct link"
 arch=("any")
 url="https://github.com/GutenYe/freedom-routes"
@@ -36,4 +36,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('b929df7c63877e23ce643ec84ba4780b')
+md5sums=('090415b9ac9ba8426f903dd6dfef2dee')
