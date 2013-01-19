@@ -2,9 +2,9 @@
 
 pkgname="freedom-routes"
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Internet Freedom - add local routes in vpn for accessing local websites using direct link"
-arch=("any")
+arch=("i686" "x86_64")
 url="https://github.com/GutenYe/freedom-routes"
 license=("MIT")
 depends=("iproute2")
@@ -16,11 +16,19 @@ source=(
 backup=("etc/freedom-routes")
 
 build() {
-  # prepare dependency
-  export GOPATH="$srcdir/go"
-  go get github.com/GutenYe/freedom-routes
-
   cd "$srcdir/$pkgname-$pkgver"
+
+  # prepare build environment
+  export GOPATH="$srcdir/go"
+  mkdir -p "$srcdir/go/src/github.com/GutenYe"
+  ln -sfT "$srcdir/$pkgname-$pkgver" "$srcdir/go/src/github.com/GutenYe/freedom-routes"
+
+  # prepare dependency 
+  go get -v
+  platform=$([ $CARCH == "i686" ] && echo "linux_386" || echo "linux_amd64")
+  rm -r "$srcdir/go/pkg/$platform/github.com/GutenYe/freedom-routes"
+
+  # begin build
   ./build.sh -d /usr/share/freedom-routes
 }
 
