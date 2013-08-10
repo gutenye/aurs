@@ -1,0 +1,3 @@
+#!/bin/sh
+
+SIKULIX_HOME="/opt/Sikuli-IDE" sh /opt/Sikuli-IDE/sikuli-script

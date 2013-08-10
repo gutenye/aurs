@@ -1,0 +1,48 @@
+# Maintainer: foobster <esangaline@gmail.com>
+pkgname=sikuli-ide
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="A visual technology to search and automate graphical user interfaces using screenshots"
+arch=("i686" "x86_64")
+license=("MIT")
+url="http://www.sikuli.org"
+depends=("java-environment" "opencv-old-alt" "wmctrl" "libtiff4")
+makedepends=("unzip")
+if [ $CARCH = "x86_64" ]; then
+    _sikuli_md5="0d715f9895ee0b6af1f4b7159544ff3b"
+    _carch="64"
+else    
+    _sikuli_md5="53792d2a4c3b154cb31a51363280f29a"
+    _carch="32"
+fi                
+_filename="Sikuli-IDE-$pkgver-Lnx$_carch"
+source=("sikuli-ide.desktop" 
+        "sikuli-ide"
+        "sikuli-script"
+        "http://doc.sikuli.org/_static/ide-icon-64.png"
+        "https://launchpad.net/sikuli/sikuli-api/$pkgver/+download/$_filename.zip")
+noextract=("$_filename.zip")
+md5sums=( "49df2c8d87c5a55fa50e8216169f4c7f"
+         "80c17bca44c986c5b07fc09c6a858ec9"
+         "7963161b7fa1469b88867c83ad9a3b3e"
+         "c35442418366e6b10bb17751613cbcc6"
+         $_sikuli_md5)         
+
+prepare() {
+  [ -e $_filename ] && rm -r $_filename
+  unzip $_filename.zip -d $_filename
+}
+
+package(){
+    ##Desktop
+    mkdir -p $pkgdir/usr/share/{applications,pixmaps} 
+    install -m644 ide-icon-64.png $pkgdir/usr/share/pixmaps 
+    install -m644 sikuli-ide.desktop $pkgdir/usr/share/applications 
+
+    ##Binary
+    mkdir -p $pkgdir/opt
+    cp -r $_filename $pkgdir/opt/Sikuli-IDE
+
+		mkdir -p $pkgdir/usr/bin
+		cp sikuli-ide sikuli-script $pkgdir/usr/bin
+}
