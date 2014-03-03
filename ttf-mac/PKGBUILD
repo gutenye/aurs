@@ -9,7 +9,7 @@ url='http://www.apple.com/osx/'
 license=('custom')
 depends=('fontconfig')
 makedepends=('fondu')
-conflicts=(')
+conflicts=('')
 install='install'
 
 source=(
