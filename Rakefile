@@ -9,6 +9,9 @@ desc "release it to AUR site (alias r)"
 task :release do
   Rake::Task["generate"].invoke
 
+  # remove old src packages
+  run "rm *.src.tar.gz 2>/dev/null"
+
   # make sure tested
   run "makepkg -si"
   exit if $? != 0
