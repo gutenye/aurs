@@ -2,7 +2,7 @@
 
 pkgname="keepass-favicon"
 pkgver=1.8.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A KeePass plugin that downloads and stores favicons. PKGBUILD source code at https://github.com/GutenYe/aur/tree/master/keepass-favicon"
 arch=("any")
 url="https://sourceforge.net/projects/keepass-favicon/"
