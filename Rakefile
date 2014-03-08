@@ -41,7 +41,7 @@ desc "clean all generated pkgs (alias c)"
 # pkg.tar.xz
 # tar.gz, tar.bz ..
 task :clean do
-  #`rm *.tar.* &>/dev/null` 
+  #`rm *.tar.* &>/dev/null`
 end
 
 alias_task :c, :clean
@@ -49,6 +49,7 @@ alias_task :c, :clean
 desc "generate md5sum for PKGBUILD (alias g)"
 task :generate do
   if !@invoked_generate then
+    puts "CAREFUL:: need remove download files before continue."
     run %~sed -i '/md5sum/,$ d' PKGBUILD~, verbose: false
     run "makepkg -g >> PKGBUILD"
 

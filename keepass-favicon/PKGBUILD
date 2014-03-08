@@ -2,19 +2,19 @@
 
 pkgname="keepass-favicon"
 pkgver=1.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A KeePass plugin that downloads and stores favicons. PKGBUILD source code at https://github.com/GutenYe/aur/tree/master/keepass-favicon"
 arch=("any")
 url="https://sourceforge.net/projects/keepass-favicon/"
 license=("GPLv2")
 depends=("keepass")
-source=("http://downloads.sourceforge.net/project/$pkgname/$pkgver/KeePassFaviconDownloader.plgx")
+source=("KeePassFaviconDownloader-$pkgver.plgx::http://downloads.sourceforge.net/project/$pkgname/$pkgver/KeePassFaviconDownloader.plgx")
 
 package() {
   cd "$srcdir"
 
-  install -Dm664 KeePassFaviconDownloader.plgx "$pkgdir/usr/share/keepass/KeePassFaviconDownloader.plgx"
+  install -Dm664 KeePassFaviconDownloader-$pkgver.plgx "$pkgdir/usr/share/keepass/KeePassFaviconDownloader.plgx"
 }
 
 # vim:set ts=2 sw=2 et:
-md5sums=('f39553090f81643bdc082ccb2d343b29')
+md5sums=('8a42f88b144b1d16d262081a85ccb7da')
