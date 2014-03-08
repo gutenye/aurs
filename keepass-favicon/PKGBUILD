@@ -1,11 +1,11 @@
 # Maintainer: Guten Ye
 
 pkgname="keepass-favicon"
-pkgver=1.7.2
+pkgver=1.8.0
 pkgrel=1
-pkgdesc="A KeePass plugin that downloads and stores favicons."
+pkgdesc="A KeePass plugin that downloads and stores favicons. PKGBUILD source code at https://github.com/GutenYe/aur/tree/master/keepass-favicon"
 arch=("any")
-url="https://sourceforge.net/projects/keepass-favicon/" 
+url="https://sourceforge.net/projects/keepass-favicon/"
 license=("GPLv2")
 depends=("keepass")
 source=("http://downloads.sourceforge.net/project/$pkgname/$pkgver/KeePassFaviconDownloader.plgx")

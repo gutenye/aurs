@@ -10,7 +10,7 @@ license=("MIT")
 depends=("iproute2")
 makedepends=("git" "go")
 source=()
-source=( 
+source=(
   "$pkgname-$pkgver.tar.gz::https://github.com/GutenYe/freedom-routes/archive/v$pkgver.tar.gz"
 )
 backup=("etc/freedom-routes")
@@ -23,7 +23,7 @@ build() {
   mkdir -p "$srcdir/go/src/github.com/GutenYe"
   ln -sfT "$srcdir/$pkgname-$pkgver" "$srcdir/go/src/github.com/GutenYe/freedom-routes"
 
-  # prepare dependency 
+  # prepare dependency
   go get -v
   platform=$([ $CARCH == "i686" ] && echo "linux_386" || echo "linux_amd64")
   rm -r "$srcdir/go/pkg/$platform/github.com/GutenYe/freedom-routes"
