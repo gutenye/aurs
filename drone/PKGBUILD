@@ -1,0 +1,35 @@
+# Maintainer: Guten Ye
+
+pkgname="drone"
+pkgver=1.0.0
+pkgrel=4
+pkgdesc="Internet Freedom - add local routes in vpn for accessing local websites using direct link"
+arch=("i686" "x86_64")
+url="https://github.com/GutenYe/freedom-routes"
+license=("MIT")
+depends=()
+makedepends=()
+source=()
+source=(
+  "http://downloads.drone.io/latest/drone.deb"
+)
+backup=()
+
+prepare() {
+  mkdir "$pkgname"
+  tar -xf data.tar.gz -C "$pkgname"
+}
+
+package() {
+  cd "$srcdir/$pkgname"
+
+  mkdir -p "$pkgdir/usr/bin"
+  mkdir -p "$pkgdir/etc"
+  mkdir -p "$pkgdir/usr/share/freedom-routes"
+  #cp freedom-routes "$pkgdir/usr/bin"
+  #cp freedom-routes.etc "$pkgdir/etc/freedom-routes"
+  #cp -r templates "$pkgdir/usr/share/freedom-routes"
+}
+
+# vim:set ts=2 sw=2 et:
+md5sums=('a84478dfe6a6287b5315b3313f8eec67')
