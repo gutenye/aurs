@@ -1,15 +1,20 @@
 # Maintainer: Guten Ye
 
-pkgname="freedom-routes"
+# cvs
+pkgname="hello-git"
+source=('[folder::][vcs+]url[#fragment]')
+
+
+
+pkgname="hello"
 pkgver=1.0.0
-pkgrel=4
-pkgdesc="Internet Freedom - add local routes in vpn for accessing local websites using direct link"
-arch=("i686" "x86_64")
-url="https://github.com/GutenYe/freedom-routes"
-license=("MIT")
+pkgrel=1
+pkgdesc="description"
+arch=("i686" "x86_64" "any")
+url="homepage"
+license=("Unkown")
 depends=("iproute2")
 makedepends=("git" "go")
-source=()
 source=(
   "$pkgname-$pkgver.tar.gz::https://github.com/GutenYe/freedom-routes/archive/v$pkgver.tar.gz"
 )
