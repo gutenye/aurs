@@ -1,0 +1,32 @@
+# Author: Andrew Kelley <superjoe30@gmail.com>
+# Maintainer: superjoe <superjoe30@gmail.com>
+
+_npmname=groovebasin
+pkgname=groovebasin
+pkgver=1.0.1
+pkgrel=1
+pkgdesc="Music player server with a web-based user interface inspired by Amarok 1.4."
+arch=(any)
+url="http://github.com/superjoe30/groovebasin"
+license=(MIT)
+depends=(nodejs libgroove start-stop-daemon)
+source=(
+  http://registry.npmjs.org/$_npmname/-/$_npmname-$pkgver.tgz
+  groovebasin.conf
+  groovebasin.rc
+)
+noextract=($_npmname-$pkgver.tgz)
+sha1sums=('c702574f3b8fb05d82074ded8305b2d7a9b72471'
+          '91c29d8ae9881b56816af722656762b1ce04af02'
+          '61ab39c4d19b91700b77224851cfaa6884d0fa1b')
+
+build() {
+  cd $srcdir
+  local _npmdir="$pkgdir/usr/lib/node_modules/"
+  mkdir -p $_npmdir
+  cd $_npmdir
+  npm install -g --prefix "$pkgdir/usr" $_npmname@$pkgver
+  install -D -m644 $srcdir/groovebasin.conf $pkgdir/etc/conf.d/groovebasin
+  install -D -m755 $srcdir/groovebasin.rc $pkgdir/etc/rc.d/groovebasin
+}
+# vim:set ts=2 sw=2 et:
