@@ -1,0 +1,23 @@
+# Maintainer: Guten Ye
+
+pkgname="bups"
+pkgver=0.4.1
+pkgrel=1
+pkgdesc="Simple GUI for Bup, a very efficient backup system."
+arch=("any")
+url="https://github.com/emersion/bups"
+license=("MIT")
+depends=("bup" "pygtk")
+makedepends=()
+source=(
+  "https://github.com/emersion/bups/archive/v0.4.1.tar.gz")
+md5sums=('8f208121a78de41c0316d2cc4aeaab67')
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  sed 's/bups.mo/bups.po/' -i setup.py
+  python2 setup.py install --root="$pkgdir/" --optimize=1
+}
+
+# vim:set ts=2 sw=2 et:
