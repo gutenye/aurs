@@ -1,5 +1,0 @@
-# Arguments for openvpn
-OPENVPN_ARG=""
-
-# profile to connect.
-NAME="awank.conf"
