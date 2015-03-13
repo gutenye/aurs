@@ -57,4 +57,4 @@ Note: Directly cp theses fonts under Linux get zero size file.
 	$ makepkg -s 
 	$ pacman -U ttf-mac-*.pkg.tar.xz
 
-Wow, It's too complex, it there a easy way? sure, you can find a download link at [here](http://code.google.com/p/invisible-files/downloads/list)
+Wow, It's too complex, it there a easy way? sure, you can find a download link at [here](https://github.com/GutenYe/aur/releases/download/ttf-mac/ttf-mac.tar.gz)
