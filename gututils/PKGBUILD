@@ -1,11 +1,11 @@
 # Maintainer: Guten Ye
 
-pkgname="guten-utils"
-pkgver=20120911
+pkgname="gututils"
+pkgver=1.0
 pkgrel=2
 pkgdesc="my cmdline utils"
 arch=("any")
-url="https://github.com/GutenYe/guten-utils"
+url="https://github.com/gutenye/gututils"
 license=("MIT")
 
 build() {
