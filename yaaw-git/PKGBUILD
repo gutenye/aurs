@@ -23,13 +23,10 @@ pkgver() {
 
 package() {
   cd "$srcdir/$pkgname"
-
   mkdir -p "$pkgdir/usr/share/webapps/yaaw"
-  cp -r * "$pkgdir/usr/share/webapps/yaaw"
-
   mkdir -p "$pkgdir/etc/webapps/yaaw"
+  cp -r * "$pkgdir/usr/share/webapps/yaaw"
   cp ../*.example.conf "$pkgdir/etc/webapps/yaaw"
-
   chown http:http -R "$pkgdir/usr/share/webapps/yaaw"
 }
 
