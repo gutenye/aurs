@@ -1,9 +1,7 @@
-# Maintainer: Guten Ye
-
 pkgname=ttf-mac
 pkgver=10.8.1
-pkgrel=6
-pkgdesc='A pleasehold for Mac OS X TrueType fonts. Please consult https://github.com/GutenYe/aur/tree/master/ttf-mac for Installation.'
+pkgrel=7
+pkgdesc='A pleasehold for Mac OS X TrueType fonts. Read Installation at https://github.com/gutenye/aurs/tree/master/ttf-mac'
 arch=('any')
 url='http://www.apple.com/osx/'
 license=('custom')
