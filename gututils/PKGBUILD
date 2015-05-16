@@ -1,20 +1,16 @@
-# Maintainer: Guten Ye
-
 pkgname="gututils"
-pkgver=1.0
-pkgrel=2
-pkgdesc="my cmdline utils"
+pkgver=0.0.0
+pkgrel=1
+pkgdesc="Guten's cmdline utils"
 arch=("any")
 url="https://github.com/gutenye/gututils"
 license=("MIT")
+md5sums=()
 
 build() {
-  cd "$srcdir"
-	./build.sh
 }
 
 package() {
   mkdir -p "$pkgdir/usr/bin"
-  cp dist/* "$pkgdir/usr/bin"
+  cp aur "$pkgdir/usr/bin"
 }
-md5sums=()
