@@ -5,4 +5,12 @@ k810-conf
 
 ## USAGE
 
+**Manually**
+
 	# k810_conf -d /dev/hidraw<n> $DEVNAME -f on    # n is 1,2,3,4
+
+**Use udev rules**
+
+  # edit /etc/udev/rules.d/10-k810-conf.rules
+
+      ATTRS{address}=="FIXME"    # you can get address by `hcitool dev`
