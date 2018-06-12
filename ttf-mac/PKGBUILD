@@ -1,3 +1,5 @@
+# error: missing source file
+
 pkgname=ttf-mac
 pkgver=10.8.1
 pkgrel=7
@@ -9,30 +11,7 @@ depends=('fontconfig')
 makedepends=('fondu')
 conflicts=('')
 install='install'
-
-source=(
-	'Apple Braille.ttf'
-	'Apple Braille Outline 6 Dot.ttf'
-	'Apple Braille Outline 8 Dot.ttf'
-	'Apple Braille Pinpoint 6 Dot.ttf'
-	'Apple Braille Pinpoint 8 Dot.ttf'
-	'Courier.dfont'
-	'Geeza Pro.ttf' 'Geeza Pro Bold.ttf'
-	'Geneva.dfont'
-	'Helvetica.dfont'
-	'HelveticaNeue.dfont'
-	'HelveticaNeueDeskUI.ttc'
-	'Keyboard.ttf'
-	'LucidaGrande.ttc'
-	'MarkerFelt.ttc'
-	'Menlo.ttc'
-	'Monaco.dfont'
-	'Symbol.ttf'
-	'ThonburiBold.ttf'
-	'Thonburi.ttf'
-	'Times.dfont'
-	'ZapfDingbats.ttf'
-	)
+#source=( 'Apple Braille.ttf' 'Apple Braille Outline 6 Dot.ttf' 'Apple Braille Outline 8 Dot.ttf' 'Apple Braille Pinpoint 6 Dot.ttf' 'Apple Braille Pinpoint 8 Dot.ttf' 'Courier.dfont' 'Geeza Pro.ttf' 'Geeza Pro Bold.ttf' 'Geneva.dfont' 'Helvetica.dfont' 'HelveticaNeue.dfont' 'HelveticaNeueDeskUI.ttc' 'Keyboard.ttf' 'LucidaGrande.ttc' 'MarkerFelt.ttc' 'Menlo.ttc' 'Monaco.dfont' 'Symbol.ttf' 'ThonburiBold.ttf' 'Thonburi.ttf' 'Times.dfont' 'ZapfDingbats.ttf')
 
 build() {
   cd "$srcdir"

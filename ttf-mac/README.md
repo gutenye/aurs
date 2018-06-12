@@ -47,14 +47,16 @@ Please consult Apple license before using fonts.
 You can acquire fonts from Mac OS X.
 
 On the installed Mac OS X fonts are located in 
-	
+
 	/System/Library/Fonts
 
-Copy all `*.dfont`, `*.ttf`, `*.ttc` fonts into source directory, and start to build.  
+Copy all `*.dfont`, `*.ttf`, `*.ttc` fonts into source directory, and start to build.
 
 Note: Directly cp theses fonts under Linux get zero size file.
 
-	$ makepkg -s 
+	$ edit PKGBUILD
+	  uncomment source=(...)
+	$ makepkg -s
 	$ pacman -U ttf-mac-*.pkg.tar.xz
 
 Wow, It's too complex, it there a easy way? sure, you can find a download link at [here](https://github.com/GutenYe/aur/releases/download/ttf-mac/ttf-mac.tar.gz)

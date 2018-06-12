@@ -8,13 +8,16 @@ k810-conf
 **Manually**
 
 ```
-# k810_conf -d /dev/hidraw<n> $DEVNAME -f on    # n is 1,2,3,4
+$ journalctl -k | grep hidraw
+> hid-generic 0005:046D:B319.0004: input,hidraw3: BLUETOOTH HID v12.02 Keyboard [Logitech K810] on 00:1a:7d:da:71:11
+# k810-conf -d /dev/hidraw3 -f on    # replace hidraw3 with your own value from above
+
 ```
 
-**Use udev rules**
+**Use udev rules** (Automatically set when K810 is connected)
 
 ```
 # edit /etc/udev/rules.d/10-k810-conf.rules
 
-    ATTRS{address}=="FIXME"    # you can get address by `hcitool dev`
+    ..., ATTRS{address}=="00:1a:7d:da:71:11", ...    # replace 00:1a:7d:da:71:11 with your own value from above
 ```

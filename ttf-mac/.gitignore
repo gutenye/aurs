@@ -1,0 +1,7 @@
+src/
+pkg/
+*.ttf
+*.dfont
+*.ttc
+ttf-mac
+publish.sh
