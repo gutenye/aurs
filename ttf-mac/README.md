@@ -1,9 +1,9 @@
 ttf-mac, a Archlinux package of Mac OS X TrueType fonts
 --------------------------------------------------
 
-|    |                                                |
-|----|------------------------------------------------|
-|AUR | https://aur.archlinux.org/packages.php?ID=62850|
+|    |                                                   |
+|----|---------------------------------------------------|
+|AUR | https://aur.archlinux.org/packages/ttf-mac-fonts/ |
 
 It contains following fonts
 
