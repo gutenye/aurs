@@ -1,0 +1,3 @@
+[submodule "exodus"]
+	path = exodus
+	url = ssh://aur@aur.archlinux.org/exodus.git
